@@ -1,0 +1,11 @@
+{
+  "name": "Chrome Extension Example Action Button",
+  "version": "0.1.0",
+  "manifest_version": 3,
+  "action": {
+    "default_title": "Search OpenBase"
+  },
+  "background": {
+    "service_worker": "background.js"
+  }
+}
