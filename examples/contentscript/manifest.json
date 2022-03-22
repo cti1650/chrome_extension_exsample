@@ -1,6 +1,6 @@
 {
-  "name": "Chrome Extension Example Context Menu",
-  "version": "0.1.0",
+  "name": "Chrome Extension Example Content Script",
+  "version": "0.1.2",
   "manifest_version": 3,
   "background": {
     "service_worker": "background.js"
