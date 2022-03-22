@@ -1,9 +1,17 @@
 {
   "name": "Chrome Extension Example Content Script",
-  "version": "0.1.2",
+  "version": "0.1.0",
   "manifest_version": 3,
   "background": {
     "service_worker": "background.js"
   },
-  "permissions": ["contextMenus"]
+  "host_permissions": [
+    "https://www.npmjs.com/package/*",
+    "https://github.com/*"
+  ],
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "scripting"
+  ]
 }

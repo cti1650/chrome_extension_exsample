@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "chrome_extension_maker_tools": "https://github.com/cti1650/chrome_extension_maker_tools"
+  }
+}

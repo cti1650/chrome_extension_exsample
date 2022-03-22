@@ -5,7 +5,7 @@ chrome.runtime.onInstalled.addListener((details) => {
   chrome.contextMenus.create({
     id: "openbaseSearch",
     title: "OpenBase Search",
-    contexts: ["page", "link"]
+    contexts: ["page", "link"],
   });
 });
 
@@ -17,14 +17,22 @@ chrome.contextMenus.onClicked.addListener((info, tab) => {
       const npmUrl = "https://www.npmjs.com/package/";
       const githubUrl = "https://github.com/";
       if (url.startsWith(npmUrl)) {
-        chrome.tabs.create({
-          url: `https://openbase.com/search?q=${url.replace(npmUrl, "")}`,
-        });
+        const reg = /https:\/\/www\.npmjs\.com\/package\/(?<package>.+)/g;
+        const resulte = reg.exec(url);
+        if (resulte) {
+          chrome.tabs.create({
+            url: `https://openbase.com/search?q=${resulte.groups.package}`,
+          });
+        }
       }
       if (url.startsWith(githubUrl)) {
-        chrome.tabs.create({
-          url: `https://openbase.com/search?q=${url.replace(githubUrl, "")}`,
-        });
+        const reg = /https:\/\/github\.com\/.+?\/(?<package>[\w-]+)/g;
+        const resulte = reg.exec(url);
+        if (resulte) {
+          chrome.tabs.create({
+            url: `https://openbase.com/search?q=${resulte.groups.package}`,
+          });
+        }
       }
       break;
     default:
