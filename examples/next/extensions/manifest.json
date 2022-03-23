@@ -1,0 +1,9 @@
+{
+  "name": "Chrome Extension Example Next Page",
+  "description": "Chrome Extension Example Next Page",
+  "version": "0.1.0",
+  "action": {
+    "default_popup": "./dist/index.html"
+  },
+  "manifest_version": 3
+}
