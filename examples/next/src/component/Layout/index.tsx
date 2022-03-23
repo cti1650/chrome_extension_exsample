@@ -1,3 +1,3 @@
-import { Layout } from './Layout'
+import { ExtensionLayout } from './Layout'
 
-export { Layout }
+export { ExtensionLayout }

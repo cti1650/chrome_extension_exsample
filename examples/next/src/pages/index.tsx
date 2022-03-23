@@ -1,11 +1,11 @@
 import React from "react";
-import { Layout } from "@components/Layout";
+import { ExtensionLayout } from "@components/Layout";
 import { Button, SimpleGrid, TextInput, Title } from "@mantine/core";
 import { useForm } from "@mantine/form";
 
 const Pages = () => {
   const form = useForm({ initialValues: { keyword: "" } });
-  const handleSearch = ({keyword}) => {
+  const handleSearch = ({ keyword }) => {
     const query = keyword;
     window.open(
       "https://openbase.com/search?q=" + query,
@@ -14,7 +14,7 @@ const Pages = () => {
   };
   return (
     <>
-      <Layout>
+      <ExtensionLayout>
         <form onSubmit={form.onSubmit((values) => handleSearch(values))}>
           <SimpleGrid>
             <Title order={4} className="text-white">
@@ -27,7 +27,7 @@ const Pages = () => {
             <Button type="submit">Search</Button>
           </SimpleGrid>
         </form>
-      </Layout>
+      </ExtensionLayout>
     </>
   );
 };

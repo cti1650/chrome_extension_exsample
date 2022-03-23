@@ -1,20 +1,25 @@
 import { VFC } from 'react';
 import { Title } from '@components/Part';
+import cc from 'classcat';
+import { Container, SimpleGrid } from '@mantine/core';
 
 type Props = {
   title?: string,
-  children: React.ReactNode
+  children: React.ReactNode,
+  className?: string,
 }
 
-export const Layout: VFC<Props> = (props) => {
+export const ExtensionLayout: VFC<Props> = (props) => {
   const { title, children } = props
   return (
     <>
-      <div className='my-1 mx-6 w-[370px]'>
-        {title && <Title label={title} />}
-        <div className='flex flex-col'>
-          {children}
-        </div>
+      <div className='fixed top-0 left-0 py-8 px-7 w-full h-full bg-gray-800'>
+        <Container>
+          {title && <Title label={title} />}
+          <SimpleGrid>
+            {children}
+          </SimpleGrid>
+        </Container>
       </div>
     </>
   )

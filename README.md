@@ -58,3 +58,27 @@ Chrome拡張機能の学習用に1つの題材を複数の実装方法で検証�
 #### アクションページに検索結果のiframeを表示 ( Action Page )
 
 - https://github.com/cti1650/chrome_extension_exsample/tree/main/examples/actionpage
+
+#### アクションページにOpenbase検索窓を表示 ( Action Page + Next.js + Tailwind.css + Mantine )
+
+- https://github.com/cti1650/chrome_extension_exsample/tree/main/examples/next
+
+    - 初期設定
+
+    ```
+    cd examples/next
+    yarn
+    ```
+
+    - ページ動作検証
+
+    ```
+    yarn dev
+    ```
+
+    - 拡張機能に反映
+
+    ```
+    yarn export
+    ```
+
